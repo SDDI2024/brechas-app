@@ -1,0 +1,11 @@
+.venv/
+data/intermediate/
+data/results/
+data/origen/
+__pycache__/
+AGENTS.md
+reporte_verificacion_detallada.txt
+test_analizador.py
+test_cli_automatizacion.py
+anexo_v4_completo.py
+docs/
