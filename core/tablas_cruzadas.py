@@ -405,13 +405,16 @@ def crear_grafico_dumbbell(rrhh_original, rrhh_completa, escenario, digitos, car
     ax.set_yticks(y_pos)
     ax.set_yticklabels([d[0] for d in datos], fontsize=9)
     ax.set_xlabel('RRHH', fontsize=10)
-    ax.set_title(f'Comparación RRHH: Original vs Completa - {escenario}_{digitos}D - {año_anterior}', 
-                 fontsize=12, fontweight='bold')
+
+    subtitle = f'Escenario: Favorece a {escenario == "C" and "Medicina Familiar" or "Medicina General"} - Tipo análisis: {digitos} dígitos de CIE-10'
     
+    ax.set_title(f'Comparación RRHH: Productividad vs Mixta (perfil epidemiológico - productividad) - {año_anterior+1}\n{subtitle}', 
+                 fontsize=12, fontweight='bold')
+
     # Leyenda simple
     legend_elements = [
-        Line2D([0], [0], marker='o', color='w', markerfacecolor='blue', markersize=8, label='Original'),
-        Line2D([0], [0], marker='o', color='w', markerfacecolor='orange', markersize=8, label='Completa'),
+        Line2D([0], [0], marker='o', color='w', markerfacecolor='blue', markersize=8, label='Productividad'),
+        Line2D([0], [0], marker='o', color='w', markerfacecolor='orange', markersize=8, label='Mixta (perfil epidemiológico - productividad)'),
         Line2D([0], [0], color='green', linewidth=2, label='Aumento'),
         Line2D([0], [0], color='red', linewidth=2, label='Disminución')
     ]
