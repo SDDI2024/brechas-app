@@ -390,8 +390,8 @@ def crear_grafico_dumbbell(rrhh_original, rrhh_completa, escenario, digitos, car
             line_color = 'gray'   # Gris para sin cambio
         
         # Puntos original y completa (más pequeños y simples)
-        ax.scatter(orig, i, color='blue', s=40, zorder=3, alpha=0.7)
-        ax.scatter(comp, i, color='orange', s=40, zorder=3, alpha=0.7)
+        ax.scatter(orig, i, color='orange', s=40, zorder=3, alpha=0.7)
+        ax.scatter(comp, i, color='blue', s=40, zorder=3, alpha=0.7)
         
         # Línea conectada
         ax.hlines(i, orig, comp, colors=line_color, linewidth=1.5, zorder=2, alpha=0.8)
@@ -399,7 +399,7 @@ def crear_grafico_dumbbell(rrhh_original, rrhh_completa, escenario, digitos, car
         # Anotar solo la diferencia (centrada)
         mid_point = (orig + comp) / 2
         diff_text = f'{int(diff):+d}'
-        ax.text(mid_point, i, diff_text, ha='center', va='center', fontsize=8,
+        ax.text(mid_point, i+0.16, diff_text, ha='center', va='center', fontsize=8,
                 fontweight='bold', color=line_color)
     
     ax.set_yticks(y_pos)
@@ -413,8 +413,8 @@ def crear_grafico_dumbbell(rrhh_original, rrhh_completa, escenario, digitos, car
 
     # Leyenda simple
     legend_elements = [
-        Line2D([0], [0], marker='o', color='w', markerfacecolor='blue', markersize=8, label='Productividad'),
-        Line2D([0], [0], marker='o', color='w', markerfacecolor='orange', markersize=8, label='Mixta (perfil epidemiológico - productividad)'),
+        Line2D([0], [0], marker='o', color='w', markerfacecolor='orange', markersize=8, label='Productividad'),
+        Line2D([0], [0], marker='o', color='w', markerfacecolor='blue', markersize=8, label='Mixta (perfil epidemiológico - productividad)'),
         Line2D([0], [0], color='green', linewidth=2, label='Aumento'),
         Line2D([0], [0], color='red', linewidth=2, label='Disminución')
     ]
